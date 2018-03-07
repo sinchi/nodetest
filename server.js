@@ -22,7 +22,7 @@ let data = {
   }
 };
 
-app.get('/', function(res, req){
+app.get('/', function(req, res){
   return res.status(200).send({hi})
 })
 
