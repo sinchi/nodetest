@@ -1,10 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
+var cors = require('cors');
 // Initialize Express app
 var app = express();
 // Configure
+app.use(cors());
 
 // log every request to the console
 app.use(morgan('dev'));
