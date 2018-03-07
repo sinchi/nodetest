@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-
+const PORT = process.env.PORT || 5000
 // Initialize Express app
 var app = express();
 // Configure
@@ -22,6 +22,10 @@ let data = {
   }
 };
 
+app.get('/', function(res, req){
+  return res.status(200).send({hi})
+})
+
 app.get('/api', function(req, res){
   return res.status(200).send({ data: data.question });
 });
@@ -33,4 +37,4 @@ app.post('/api', function(req, res){
 
 
 
-app.listen(3000);
+app.listen(PORT);
